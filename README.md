@@ -1,3 +1,3 @@
 # ariesautomotores
 
-Aplicación Web para la concesonaria de AriesAutomotores
+Aplicación Web para la concesionaria de AriesAutomotores
