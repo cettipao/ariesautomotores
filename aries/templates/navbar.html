@@ -1,0 +1,39 @@
+<!-- Header -->
+{% load static %}
+    <header class="background-header">
+      <nav class="navbar navbar-expand-lg">
+        <div class="container">
+          <a class="navbar-brand" href="//{{ host }}"> <h2> <img width="45" class="img-fluid" src={% static "assets/images/logoChico.png" %}> <em style="margin-left: 5px">  Aries</em> Automotores </h2> </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item {% if section == "inicio" %}active{% endif %}">
+                    <a class="nav-link" href="//{{ host }}">Inicio
+                      <span class="sr-only">(current)</span>
+                    </a>
+                </li>
+
+                <li class="nav-item {% if section == "vehiculos" %}active{% endif %}"><a class="nav-link" href="//{{ host }}/vehiculos">Vehiculos</a></li>
+
+
+                <li class="nav-item disabled {% if section == "planes" %}active{% endif %} dropdown">
+                    <a class="nav-link dropdown-toggle disabled" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Planes</a>
+
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="blog.html">Plan1</a>
+                      <a class="dropdown-item" href="team.html">Plan2</a>
+                      <a class="dropdown-item" href="testimonials.html">Plan3</a>
+                      <a class="dropdown-item" href="terms.html">Plan4</a>
+                    </div>
+                </li>
+
+                <li class="nav-item {% if section == "empresa" %}active{% endif %}"><a class="nav-link" href="//{{ host }}/nuestra_empresa">Nuestra Empresa</a></li>
+
+                <li class="nav-item {% if section == "contacto" %}active{% endif %}"><a class="nav-link" href="//{{ host }}/contacto">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>

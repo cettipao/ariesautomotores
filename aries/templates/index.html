@@ -1,98 +1,27 @@
-<!DOCTYPE html>
-<html lang="en">
-
-  <head>
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
-    <meta name="author" content="">
-      {% load static %}
-    <link rel="icon" href={% static "assets/images/favicon.ico.svg" %}>
-    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
-
-    <title>Aries Automotores</title>
-    <!-- Bootstrap core CSS -->
-    <link href={% static "vendor/bootstrap/css/bootstrap.min.css" %} rel="stylesheet">
-
-    <!-- Additional CSS Files -->
-    <link rel="stylesheet" href={% static "assets/css/fontawesome.css" %}>
-    <link rel="stylesheet" href={% static "assets/css/style.css" %}>
-    <link rel="stylesheet" href={% static "assets/css/owl.css" %}>
-
-  </head>
-
-  <body>
-
-    <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
-    <!-- ***** Preloader End ***** -->
-
-    <!-- Header -->
-    <header class="">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
-          <a class="navbar-brand" href="index.html"> <h2> <img width="45" class="img-fluid" src={% static "assets/images/logoChico.png" %}> <em style="margin-left: 5px">  Aries</em> Automotores </h2> </a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarResponsive">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="index.html">Inicio
-                      <span class="sr-only">(current)</span>
-                    </a>
-                </li> 
-
-                <li class="nav-item"><a class="nav-link" href="cars.html">Autos</a></li>
-                <li class="nav-item"><a class="nav-link" href="cars.html">Motos</a></li>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Planes</a>
-                    
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="blog.html">Plan1</a>
-                      <a class="dropdown-item" href="team.html">Plan2</a>
-                      <a class="dropdown-item" href="testimonials.html">Plan3</a>
-                      <a class="dropdown-item" href="terms.html">Plan4</a>
-                    </div>
-                </li>
-
-                <li class="nav-item"><a class="nav-link" href="about-us.html">Nuestra Empresa</a></li>
-                
-                <li class="nav-item"><a class="nav-link" href="contact.html">Contacto</a></li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-    </header>
-
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+{% include "modalcotiza.html" %}
     <!-- Page Content -->
     <!-- Banner Starts Here -->
     <div class="banner header-text">
       <div class="owl-banner owl-carousel">
         <div class="banner-item-01">
           <div class="text-content">
-            <h4>Encontrá tu Auto Hoy!</h4>
-            <h2>Nuevos Modelos Disponibles</h2>
+            <h4 style="text-shadow: 1px 1px 2px black; ">Venta de 0km</h4>
+            <h2 style="text-shadow: 1px 1px 2px black; ">Todas las marcas Nacionales e Importadas</h2>
           </div>
         </div>
         <div class="banner-item-02">
           <div class="text-content">
-            <h4>Fugiat Aspernatur</h4>
-            <h2>Laboriosam reprehenderit ducimus</h2>
+            <h4 style="text-shadow: 1px 1px 2px black; ">Financiación</h4>
+            <h2 style="text-shadow: 1px 1px 2px black; ">Bancarias y a sola firma, planes especiales</h2>
           </div>
         </div>
         <div class="banner-item-03">
           <div class="text-content">
-            <h4>Saepe Omnis</h4>
-            <h2>Quaerat suscipit unde minus dicta</h2>
+            <h4></h4>
+            <h2 style="text-shadow: 1px 1px 2px black; ">NO PREGUNTE SI TENEMOS, PIDA, MIENTRAS TENGA MOTOR O HELICE PIDA</h2>
           </div>
         </div>
       </div>
@@ -105,26 +34,23 @@
           <div class="col-md-12">
             <div class="section-heading">
               <h2>Vehiculos Destacados</h2>
-              <a href="cars.html">VER MAS <i class="fa fa-angle-right"></i></a>
+              <a href="//{{ host }}/vehiculos">VER MAS <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
+            {% for destacado in destacados %}
           <div class="col-lg-4 col-md-6">
             <div class="product-item">
-              <a href="car-details.html"><img src={% static "assets/images/product-1-370x270.jpg" %} alt=""></a>
+              <a href="car-details.html"><img src="http://{{ host }}/static/{{destacado.fotoPortada}}" alt=""></a>
               <div class="down-content">
-                <a href="car-details.html"><h4>Auto de 4 ruedas, ponele</h4></a>
+                <a href="car-details.html"><h4>Aumark S3 815</h4></a>
 
-                <p style="margin-top: 5px">1.6 &nbsp;/&nbsp; Nafta &nbsp;/&nbsp; 2014 &nbsp;/&nbsp; Nuevo</p>
+                <p style="margin-top: 5px">Cummins &nbsp;/&nbsp; Nafta &nbsp;/&nbsp; 2018 &nbsp;/&nbsp; Nuevo</p>
 
-                <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 0km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small>
-                  <a style="margin-top: 5px" href="" class="filled-button align-right">Cotizar</a>
+                  <a style="margin-top: 5px;color: white" data-toggle="modal" data-target="#exampleModal" class="filled-button align-right">Cotizar</a>
               </div>
             </div>
           </div>
+            {% endfor %}
 {% comment %}
           <div class="col-lg-4 col-md-6">
             <div class="product-item">
@@ -243,12 +169,12 @@
                 <li><a href="#">It aquecorporis nulla aspernatur</a></li>
                 <li><a href="#">Corporis, omnis doloremque</a></li>
               </ul>{% endcomment %}
-              <a href="about-us.html" class="filled-button">Ver mas</a>
+              <a href="//{{ host }}/nuestra_empresa" class="filled-button">Ver mas</a>
             </div>
           </div>
           <div class="col-md-6">
             <div class="right-image">
-              <img src={% static "assets/images/about-1-570x350.jpg" %} alt="">
+              <img src={% static "assets/images/about-1-570x350.jpg.png" %} alt="">
             </div>
           </div>
         </div>
@@ -302,84 +228,59 @@
         </div>
       </div>
     </div>
-
+{% endcomment %}
     <div class="happy-clients">
       <div class="container">
         <div class="row">
           <div class="col-md-12">
             <div class="section-heading">
-              <h2>Happy Clients</h2>
+              <h2>Planes de Financiación</h2>
 
-              <a href="testimonials.html">read more <i class="fa fa-angle-right"></i></a>
             </div>
           </div>
           <div class="col-md-12">
             <div class="owl-clients owl-carousel text-center">
+
+
               <div class="service-item">
                 <div class="icon">
-                  <i class="fa fa-user"></i>
+                  <i class="fa fa-bank"></i>
                 </div>
                 <div class="down-content">
-                  <h4>John Doe</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                  <h4>Bancaria</h4>
+                  <p class="n-m"><em>Credito concedido por tu sistema bancario de preferencia</em></p>
                 </div>
               </div>
+
+                <div class="service-item">
+                <div class="icon">
+                  <i class="fa fa-pencil"></i>
+                </div>
+                <div class="down-content">
+                  <h4>A Sola Firma</h4>
+                  <p class="n-m"><em>Garantiza que solo tu firma basta para asegurar la devolución de dinero solicitado y no es necesario presentar un aval u otras garantías.</em></p>
+                </div>
+              </div>
+
+               <div class="service-item">
+                <div class="icon">
+                  <i class="fa fa-star"></i>
+                </div>
+                <div class="down-content">
+                  <h4>Planes Especiales de Aries Automotores</h4>
+                  <p class="n-m"><em>Otorgados unicamente en esta empresa, consultar.</em></p>
+                </div>
+              </div>
+
               
-              <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
-                <div class="down-content">
-                  <h4>Jane Smith</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                </div>
-              </div>
-              
-              <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
-                <div class="down-content">
-                  <h4>Antony Davis</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                </div>
-              </div>
-              
-              <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
-                <div class="down-content">
-                  <h4>John Doe</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                </div>
-              </div>
-              
-              <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
-                <div class="down-content">
-                  <h4>Jane Smith</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                </div>
-              </div>
-              
-              <div class="service-item">
-                <div class="icon">
-                  <i class="fa fa-user"></i>
-                </div>
-                <div class="down-content">
-                  <h4>Antony Davis</h4>
-                  <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
-                </div>
-              </div>
+
+
             </div>
           </div>
         </div>
       </div>
     </div>
-{% endcomment %}
+
 
     <div class="call-to-action">
       <div class="container">
@@ -389,10 +290,11 @@
               <div class="row">
                 <div class="col-md-8">
                   <h4>Contacto</h4>
-                  <p>jorgediaz@ariesautomotores.com.ar</p>
+                  <p>Si usted todavía no se decidió, y las propuestas que tiene son variadas, no lo
+piense mas, los invitamos a que nos contacte y le mejoramos cualquier alternativa.</p>
                 </div>
                 <div class="col-lg-4 col-md-6 text-right">
-                  <a href="contact.html" class="filled-button">Contactenos</a>
+                  <a href="//{{ host }}/contacto" class="filled-button">Contactenos</a>
                 </div>
               </div>
             </div>
@@ -401,27 +303,4 @@
       </div>
     </div>
 
-    
-    <footer>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="inner-content">
-              <p>Copyright © 2020 Aries Automotores - Template by: <a href="https://www.phpjabbers.com/">PHPJabbers.com</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-
-
-    <!-- Bootstrap core JavaScript -->
-    <script src={% static "vendor/jquery/jquery.min.js" %}></script>
-    <script src={% static "vendor/bootstrap/js/bootstrap.bundle.min.js" %}></script>
-
-
-    <!-- Additional Scripts -->
-    <script src={% static "assets/js/custom.js" %}></script>
-    <script src={% static "assets/js/owl.js" %}></script>
-  </body>
-</html>
+{% endblock %}

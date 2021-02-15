@@ -13,7 +13,7 @@ jQuery( document ).ready(function( $ ) {
             }, 300);
         });
         
-
+/*
         $(window).scroll(function() {
           var scroll = $(window).scrollTop();
           var box = $('.header-text').height();
@@ -25,7 +25,7 @@ jQuery( document ).ready(function( $ ) {
             $("header").removeClass("background-header");
           }
         });
-        
+      */
         if ($('.owl-clients').length) {
             $('.owl-clients').owlCarousel({
                 loop: true,
