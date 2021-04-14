@@ -60,5 +60,11 @@
 <!-- Additional Scripts -->
 <script src={% static "assets/js/custom.js" %}></script>
 <script src={% static "assets/js/owl.js" %}></script>
+<script>
+    function fullCotizar(modelo, version) {
+        document.getElementById("modelo").value = modelo;
+        document.getElementById("version").value = version;
+    }
+</script>
 </body>
 </html>

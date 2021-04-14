@@ -32,6 +32,7 @@ class Vehiculo(models.Model):
     nombre = models.CharField(max_length=50)
     fotoPortada = models.ImageField(max_length=100, upload_to='portadas/', blank=True)
     modelo = models.CharField(max_length=50)
+    version = models.CharField(max_length=50)
     año = models.IntegerField(validators=[MinValueValidator(1900), MaxValueValidator(3000)])
     estado = models.CharField(
         max_length=3,

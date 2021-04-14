@@ -18,6 +18,7 @@
     <div class="products">
       <div class="container">
         <div class="row">
+        {% comment %}
           <div class="col-md-3">
              <div class="contact-form">
                 <form action="#">
@@ -100,47 +101,27 @@
                 </form>
              </div>
           </div>
+          {% endcomment %}
 
-          <div class="col-md-9">
+          <div class="col-md-12">
             <div class="row">
-              <div class="col-md-6">
-                <div class="product-item">
-                  <a href="car-details.html"><img src={% static "assets/images/product-1-370x270.jpg.png" %} alt=""></a>
-                  <div class="down-content">
-                    <a href="car-details.html"><h4>Aumark S3 815</h4></a>
+                 {% for vehiculo in vehiculos %}
+          <div class="col-md-4">
+            <div class="product-item">
+              <a href="car-details.html"><img src="http://{{ host }}/media/{{vehiculo.fotoPortada}}" alt=""></a>
+              <div class="down-content">
+                <a href="/vehiculos/{{ vehiculo.modelo }}"><h4>{{ vehiculo.nombre }}</h4></a>
 
-                    <p style="margin-top: 5px">Cummins &nbsp;/&nbsp; Nafta &nbsp;/&nbsp; 2018 &nbsp;/&nbsp; Nuevo</p>
+                <p style="margin-top: 5px">{{ vehiculo.modelo }} &nbsp;/&nbsp; {{ vehiculo.año }} &nbsp;/&nbsp; {{ vehiculo.estado }}</p>
 
-                     <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 0km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 120L</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small> <br>
-                  <a style="margin-top: 5px;color: white" data-toggle="modal" data-target="#exampleModal" class="filled-button align-right">Cotizar</a>
-                  </div>
-                </div>
+                  <a style="margin-top: 5px;color: white" data-toggle="modal" data-target="#exampleModal" onclick="fullCotizar('{{ vehiculo.modelo }}','{{ vehiculo.version }}')" class="filled-button align-right">Cotizar</a>
               </div>
-
-              <div class="col-md-6">
-                <div class="product-item">
-                  <a href="car-details.html"><img src={% static "assets/images/product-1-370x270.jpg.png" %} alt=""></a>
-                  <div class="down-content">
-                    <a href="car-details.html"><h4>Aumark S3 815</h4></a>
-
-                    <p style="margin-top: 5px">Cummins &nbsp;/&nbsp; Nafta &nbsp;/&nbsp; 2018 &nbsp;/&nbsp; Nuevo</p>
-
-                     <small>
-                  <strong title="Author"><i class="fa fa-dashboard"></i> 0km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Author"><i class="fa fa-cube"></i> 120L</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-                  <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-                </small> <br>
-                  <a style="margin-top: 5px;color: white" data-toggle="modal" data-target="#exampleModal" class="filled-button align-right">Cotizar</a>
-                  </div>
-                </div>
-              </div>
+            </div>
+          </div>
+            {% endfor %}
 
 
-
+{% comment %}
               <div class="col-md-12">
                 <ul class="pages">
                   <li class="active"><a href="#">1</a></li>
@@ -155,7 +136,7 @@
         </div>
       </div>
     </div>
-
+{% endcomment %}
 
 
 {% include "modalcotiza.html" %}

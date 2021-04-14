@@ -42,11 +42,11 @@
             <div class="product-item">
               <a href="car-details.html"><img src="http://{{ host }}/media/{{destacado.fotoPortada}}" alt=""></a>
               <div class="down-content">
-                <a href="car-details.html"><h4>{{ destacado.nombre }}</h4></a>
+                <a href="/vehiculos/{{ destacado.modelo }}"><h4>{{ destacado.nombre }}</h4></a>
 
                 <p style="margin-top: 5px">{{ destacado.modelo }} &nbsp;/&nbsp; {{ destacado.año }} &nbsp;/&nbsp; {{ destacado.estado }}</p>
 
-                  <a style="margin-top: 5px;color: white" data-toggle="modal" data-target="#exampleModal" class="filled-button align-right">Cotizar</a>
+                  <a style="margin-top: 5px;color: white" data-toggle="modal" data-target="#exampleModal" onclick="fullCotizar('{{ destacado.modelo }}','{{ destacado.version }}')" class="filled-button align-right">Cotizar</a>
               </div>
             </div>
           </div>
