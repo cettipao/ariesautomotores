@@ -25,7 +25,7 @@ SECRET_KEY = '_hh9ff%ujatp+5hy3=d$@=#0(e3%+$m^61h3r52^f(-9w26=91'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["aries-env.eba-kttdx2ew.us-west-2.elasticbeanstalk.com","0.0.0.0"]
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -49,6 +49,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'ebdjango.urls'
@@ -133,3 +134,5 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'staticfiles'),
 )
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR + '/media/'

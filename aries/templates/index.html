@@ -40,11 +40,11 @@
             {% for destacado in destacados %}
           <div class="col-lg-4 col-md-6">
             <div class="product-item">
-              <a href="car-details.html"><img src="http://{{ host }}/static/{{destacado.fotoPortada}}" alt=""></a>
+              <a href="car-details.html"><img src="http://{{ host }}/media/{{destacado.fotoPortada}}" alt=""></a>
               <div class="down-content">
-                <a href="car-details.html"><h4>Aumark S3 815</h4></a>
+                <a href="car-details.html"><h4>{{ destacado.nombre }}</h4></a>
 
-                <p style="margin-top: 5px">Cummins &nbsp;/&nbsp; Nafta &nbsp;/&nbsp; 2018 &nbsp;/&nbsp; Nuevo</p>
+                <p style="margin-top: 5px">{{ destacado.modelo }} &nbsp;/&nbsp; {{ destacado.año }} &nbsp;/&nbsp; {{ destacado.estado }}</p>
 
                   <a style="margin-top: 5px;color: white" data-toggle="modal" data-target="#exampleModal" class="filled-button align-right">Cotizar</a>
               </div>
